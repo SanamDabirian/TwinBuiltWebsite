@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@theme {
+  --color-charcoal: #2d3433;
+  --color-deep: #1a1e1d;
+  --color-sage: #b2c2b9;
+  --color-mint: #dcebe6;
+  --color-ink: #1d2422;
+  --color-white-soft: #f4f7f5;
+
+  --font-display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-ui: Inter, "Segoe UI", Helvetica, Arial, sans-serif;
+
+  --radius-pill: 999px;
+  --radius-card: 0.75rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-white-soft);
+  color: var(--color-ink);
+  font-family: var(--font-ui);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+.editorial {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-sage);
+  outline-offset: 3px;
+}
+
+.section-pad {
+  padding-block: clamp(4.5rem, 10vw, 8.5rem);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(1.25rem);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.hero-scale {
+  transform: scale(1.06);
+  transition: transform 8s ease-out;
+}
+
+.hero-scale.is-visible {
+  transform: scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal,
+  .hero-scale {
+    opacity: 1;
+    transform: none;
+  }
+}

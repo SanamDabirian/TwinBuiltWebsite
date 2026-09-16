@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Layered building massing suggesting a digital twin">
+  <rect width="1200" height="800" fill="#1A1E1D"/>
+  <g fill="none" stroke="#DCEBE6" stroke-width="2" opacity="0.45">
+    <path d="M200 620 L420 480 L640 620 L420 760 Z"/>
+    <path d="M420 480 L640 340 L860 480 L640 620 Z"/>
+    <path d="M640 340 L860 200 L1080 340 L860 480 Z"/>
+  </g>
+  <g fill="#B2C2B9" opacity="0.16">
+    <polygon points="420,480 640,340 640,620 420,760"/>
+    <polygon points="640,340 860,200 860,480 640,620"/>
+  </g>
+</svg>

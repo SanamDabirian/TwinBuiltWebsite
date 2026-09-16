@@ -1,0 +1,154 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Button from "../components/Button.astro";
+import Reveal from "../components/Reveal.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import ServiceCard from "../components/ServiceCard.astro";
+import { site } from "../data/site";
+
+const services = [
+  {
+    title: "Urban Building Energy Modeling",
+    body: "Our UBEM services provide detailed analyses of energy use in urban environments, helping cities and campuses identify efficiency opportunities and plan retrofit initiatives.",
+  },
+  {
+    title: "Digital Twin Integration",
+    body: "Leverage our expertise in digital twin technology to create virtual models of buildings and districts that support smarter operational decisions.",
+  },
+  {
+    title: "Decarbonization Strategies",
+    body: "We specialize in developing actionable retrofit strategies that minimize carbon footprints while enhancing building performance and structural resilience.",
+  },
+  {
+    title: "Data-Driven Decision Support",
+    body: "Utilize our advanced data analytics to make informed decisions that accelerate progress toward net-zero targets.",
+  },
+];
+
+const steps = [
+  {
+    title: "Assessing Your Needs",
+    body: "We begin by conducting a thorough assessment of your current energy landscape and sustainability goals.",
+  },
+  {
+    title: "Collaborative Strategy Development",
+    body: "Our team works closely with you to develop customized strategies tailored to your context.",
+  },
+  {
+    title: "Ongoing Support and Evaluation",
+    body: "We provide continuous support and track your progress toward net-zero targets.",
+  },
+];
+---
+
+<BaseLayout
+  title={site.name}
+  description={site.description}
+  image="/images/og-default.svg"
+>
+  <section class="relative isolate min-h-[92vh] overflow-hidden bg-deep">
+    <img
+      src="/images/hero-architecture.svg"
+      alt="Moody architectural forms used as a temporary placeholder for TwinBuilt Studio"
+      class="hero-scale absolute inset-0 h-full w-full object-cover"
+      data-reveal
+    />
+    <div class="absolute inset-0 bg-gradient-to-r from-deep/90 via-deep/75 to-deep/45"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-deep via-deep/40 to-transparent"></div>
+    <div class="relative mx-auto flex min-h-[92vh] max-w-6xl flex-col justify-end px-6 pb-24 pt-32 md:px-10">
+      <Reveal>
+        <h1 class="max-w-5xl text-[clamp(2.8rem,8vw,6.2rem)] font-normal leading-[0.92] text-mint">
+          Building the Digital Future of Sustainable Cities
+        </h1>
+        <p class="editorial mt-8 max-w-3xl text-[clamp(1.25rem,2.5vw,1.85rem)] text-mint/88">
+          Welcome to TwinBuilt Studio, your partner in advancing sustainable urban development. We specialize in transforming complex energy data into actionable insights for municipalities and organizations pursuing net-zero goals.
+        </p>
+        <div class="mt-10">
+          <Button href="/book-online/">Start your journey</Button>
+        </div>
+      </Reveal>
+    </div>
+  </section>
+
+  <section class="section-pad bg-charcoal">
+    <div class="mx-auto max-w-6xl px-6 md:px-10">
+      <Reveal>
+        <SectionHeading eyebrow="About TwinBuilt Studio" title="ABOUT TWINBUILT STUDIO">
+          <p>
+            At TwinBuilt Studio, we are passionate about building a sustainable future. Our mission is to empower cities and organizations with innovative solutions in Urban Building Energy Modeling and data-driven analytics to drive decarbonization.
+          </p>
+          <p class="mt-4">
+            We combine engineering, sustainability, and digital technologies to deliver customized strategies that meet the unique needs of every client.
+          </p>
+        </SectionHeading>
+        <div class="mt-10">
+          <Button href="/about/">Learn more</Button>
+        </div>
+      </Reveal>
+    </div>
+  </section>
+
+  <section class="section-pad bg-deep">
+    <div class="mx-auto max-w-6xl px-6 md:px-10">
+      <Reveal>
+        <SectionHeading eyebrow="Our services" title="OUR SERVICES">
+          <p>Customized Consulting Solutions</p>
+          <p class="mt-4 text-[clamp(1.05rem,1.8vw,1.35rem)]">
+            Explore our comprehensive services designed to support your sustainability goals.
+          </p>
+        </SectionHeading>
+      </Reveal>
+      <div class="mt-14 grid gap-6 md:grid-cols-2">
+        {services.map((service) => (
+          <Reveal>
+            <ServiceCard title={service.title} body={service.body} />
+          </Reveal>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad bg-sage">
+    <div class="mx-auto max-w-6xl px-6 md:px-10">
+      <Reveal>
+        <SectionHeading tone="light" title="OUR PROCESS">
+          <p>
+            Our consulting process is designed to yield impactful results. We employ a collaborative approach at every stage.
+          </p>
+        </SectionHeading>
+      </Reveal>
+      <ol class="mt-14 grid gap-10 md:grid-cols-3">
+        {steps.map((step, index) => (
+          <li>
+            <Reveal>
+              <p class="font-ui text-[0.72rem] uppercase tracking-[0.2em] text-charcoal/70">
+                0{index + 1}
+              </p>
+              <h3 class="mt-4 text-[clamp(1.6rem,2.4vw,2.1rem)] text-charcoal">{step.title}</h3>
+              <p class="editorial mt-4 text-[1.25rem] leading-snug text-ink/85">{step.body}</p>
+            </Reveal>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="section-pad bg-mint">
+    <div class="mx-auto max-w-6xl px-6 md:px-10">
+      <Reveal>
+        <SectionHeading tone="light" eyebrow="Get in touch" title="CONTACT US">
+          <p>
+            We invite you to reach out with any inquiries or to discuss how we can assist your organization's sustainability journey.
+          </p>
+        </SectionHeading>
+        <p class="editorial mt-8 text-[1.4rem] text-ink">
+          {site.principal}<br />
+          <a class="underline-offset-4 hover:underline" href={`mailto:${site.email}`}>{site.email}</a>
+        </p>
+        <div class="mt-10">
+          <Button href="/contact/" tone="light">Contact TwinBuilt Studio</Button>
+        </div>
+      </Reveal>
+    </div>
+  </section>
+</BaseLayout>

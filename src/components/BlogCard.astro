@@ -1,0 +1,30 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  href: string;
+  image: string;
+  imageAlt: string;
+  date: string;
+  minutes: number;
+  author: string;
+}
+
+const { title, description, href, image, imageAlt, date, minutes, author } = Astro.props;
+---
+
+<a
+  href={href}
+  class="group block overflow-hidden rounded-[0.75rem] border border-charcoal/10 bg-white-soft transition-colors duration-300 hover:border-charcoal/30"
+>
+  <div class="aspect-[16/9] overflow-hidden bg-charcoal">
+    <img src={image} alt={imageAlt} class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" width="960" height="540" />
+  </div>
+  <div class="p-6">
+    <p class="text-[0.68rem] uppercase tracking-[0.18em] text-charcoal/60">
+      {author} · {date} · {minutes} min read
+    </p>
+    <h3 class="mt-3 text-[clamp(1.5rem,2.4vw,2rem)] text-charcoal">{title}</h3>
+    <p class="editorial mt-3 text-[1.15rem] leading-snug text-ink/80">{description}</p>
+  </div>
+</a>

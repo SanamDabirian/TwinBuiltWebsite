@@ -1,0 +1,28 @@
+---
+import { navLinks, site } from "../data/site";
+---
+
+<footer class="bg-deep text-mint">
+  <div class="mx-auto grid max-w-6xl gap-10 px-6 py-16 md:grid-cols-3 md:px-10">
+    <div>
+      <p class="font-ui text-[0.78rem] uppercase tracking-[0.18em]">{site.name}</p>
+      <p class="editorial mt-4 text-[1.35rem]">{site.principal}</p>
+      <a class="mt-4 inline-block text-sage underline-offset-4 hover:underline" href={`mailto:${site.email}`}>
+        {site.email}
+      </a>
+    </div>
+    <nav aria-label="Footer" class="grid gap-2">
+      {navLinks.map((link) => (
+        <a href={link.href} class="text-[0.78rem] uppercase tracking-[0.14em] text-mint/80 hover:text-mint">
+          {link.label}
+        </a>
+      ))}
+      <a href="/privacy/" class="text-[0.78rem] uppercase tracking-[0.14em] text-mint/80 hover:text-mint">
+        Privacy Policy
+      </a>
+    </nav>
+    <p class="text-[0.8rem] leading-relaxed text-mint/70">
+      © {new Date().getFullYear()} {site.name}. All rights reserved.
+    </p>
+  </div>
+</footer>

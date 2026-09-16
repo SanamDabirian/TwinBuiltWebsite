@@ -1,0 +1,68 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ConsultationCard from "../components/ConsultationCard.astro";
+import PageHero from "../components/PageHero.astro";
+import Reveal from "../components/Reveal.astro";
+import { formUrls, mailto } from "../data/forms";
+import { site } from "../data/site";
+
+const consultations = [
+  {
+    title: "Decarbonization Strategy Session",
+    duration: "1 hour 30 minutes",
+    price: "$200 CAD",
+    description: "A structured discussion of carbon goals, retrofit sequencing, and the evidence you need to choose a pathway.",
+    href: formUrls.consultations["decarbonization-strategy-session"],
+  },
+  {
+    title: "Energy Modeling Consultation",
+    duration: "1 hour",
+    price: "$150 CAD",
+    description: "A working session on urban or building energy modeling scope, data needs, and how results can support a decision.",
+    href: formUrls.consultations["energy-modeling-consultation"],
+  },
+  {
+    title: "Retrofit Strategy Workshop",
+    duration: "To be confirmed",
+    price: "$300 CAD",
+    description: "A workshop format for comparing retrofit packages and implementation constraints. Duration is still to be confirmed.",
+    href: formUrls.consultations["retrofit-strategy-workshop"],
+  },
+];
+---
+
+<BaseLayout
+  title="Book Online"
+  description="Request a TwinBuilt Studio consultation on decarbonization strategy, energy modeling, or retrofit planning. Requests are reviewed manually."
+>
+  <PageHero
+    title="Book a consultation"
+    description="Choose a session type, then submit a request. TwinBuilt Studio confirms the final time by email."
+    image="/images/renewable.svg"
+    imageAlt="Stylized renewable landscape used as a booking page placeholder"
+  />
+
+  <section class="section-pad bg-white-soft">
+    <div class="mx-auto max-w-6xl px-6 md:px-10">
+      <Reveal>
+        <p class="editorial max-w-3xl text-[clamp(1.2rem,2.2vw,1.6rem)] text-ink/85">
+          Payment is arranged after the request is reviewed. This first version of the site does not process payments. Calendly is not included unless automatic scheduling is requested later.
+        </p>
+        <p class="mt-6 text-[1.05rem] text-ink/75">
+          Prefer email? Contact
+          <a class="underline-offset-4 hover:underline" href={mailto}>{site.email}</a>
+        </p>
+      </Reveal>
+      <div class="mt-14 grid gap-6 lg:grid-cols-3">
+        {consultations.map((item) => (
+          <Reveal>
+            <ConsultationCard {...item} />
+          </Reveal>
+        ))}
+      </div>
+      <p class="mt-10 text-[0.85rem] uppercase tracking-[0.12em] text-charcoal/60">
+        CONTENT TO CONFIRM: Google Form URLs, workshop duration, cancellation policy
+      </p>
+    </div>
+  </section>
+</BaseLayout>

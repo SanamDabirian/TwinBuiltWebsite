@@ -1,0 +1,31 @@
+---
+interface Props {
+  href: string;
+  variant?: "outline" | "solid";
+  tone?: "light" | "dark";
+  newTab?: boolean;
+}
+
+const { href, variant = "outline", tone = "dark", newTab = false } = Astro.props;
+const classes = [
+  "inline-flex items-center justify-center rounded-[5px] px-7 py-3 text-[0.72rem] font-medium tracking-[0.16em] uppercase transition-colors duration-300",
+  variant === "outline" && tone === "dark"
+    ? "border border-mint text-mint hover:bg-mint hover:text-charcoal"
+    : "",
+  variant === "outline" && tone === "light"
+    ? "border border-charcoal text-charcoal hover:bg-charcoal hover:text-mint"
+    : "",
+  variant === "solid"
+    ? "bg-charcoal text-mint hover:bg-ink"
+    : "",
+].filter(Boolean).join(" ");
+---
+
+<a
+  href={href}
+  class={classes}
+  target={newTab ? "_blank" : undefined}
+  rel={newTab ? "noopener noreferrer" : undefined}
+>
+  <slot />
+</a>

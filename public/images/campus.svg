@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Campus building cluster">
+  <rect width="1200" height="800" fill="#2D3433"/>
+  <g fill="#B2C2B9" opacity="0.22">
+    <rect x="180" y="300" width="220" height="340"/>
+    <rect x="430" y="180" width="160" height="460"/>
+    <rect x="620" y="250" width="280" height="390"/>
+    <rect x="930" y="340" width="140" height="300"/>
+  </g>
+  <rect y="640" width="1200" height="160" fill="#1A1E1D"/>
+</svg>

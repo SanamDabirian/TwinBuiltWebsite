@@ -1,0 +1,61 @@
+---
+import { navLinks, site } from "../data/site";
+import { isCurrentPath } from "../utils/paths";
+
+const pathname = Astro.url.pathname;
+---
+
+<header
+  id="site-header"
+  class="fixed inset-x-0 top-0 z-50 border-b border-transparent bg-charcoal/92 text-mint backdrop-blur-sm transition-colors duration-300"
+>
+  <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4 md:px-10">
+    <a href="/" class="font-ui text-[0.92rem] uppercase tracking-[0.18em] text-mint">
+      {site.name}
+    </a>
+    <nav class="hidden items-center gap-7 lg:flex" aria-label="Primary">
+      {navLinks.map((link) => (
+        <a
+          href={link.href}
+          class:list={[
+            "text-[0.72rem] uppercase tracking-[0.16em] transition-opacity duration-300 hover:opacity-100",
+            isCurrentPath(pathname, link.href) ? "opacity-100" : "opacity-70",
+          ]}
+          aria-current={isCurrentPath(pathname, link.href) ? "page" : undefined}
+        >
+          {link.label}
+        </a>
+      ))}
+    </nav>
+    <button
+      type="button"
+      class="inline-flex items-center justify-center rounded-[5px] border border-mint/40 px-3 py-2 text-[0.68rem] uppercase tracking-[0.16em] lg:hidden"
+      data-menu-toggle
+      aria-expanded="false"
+      aria-controls="mobile-nav"
+    >
+      Menu
+    </button>
+  </div>
+</header>
+
+<div
+  id="mobile-nav"
+  class="fixed inset-0 z-40 hidden bg-deep px-6 pt-24 text-mint lg:hidden"
+  data-mobile-nav
+  role="dialog"
+  aria-modal="true"
+  aria-label="Mobile navigation"
+>
+  <nav class="flex flex-col gap-6">
+    {navLinks.map((link) => (
+      <a
+        href={link.href}
+        class="text-[clamp(1.6rem,5vw,2.2rem)] editorial"
+        aria-current={isCurrentPath(pathname, link.href) ? "page" : undefined}
+      >
+        {link.label}
+      </a>
+    ))}
+  </nav>
+</div>

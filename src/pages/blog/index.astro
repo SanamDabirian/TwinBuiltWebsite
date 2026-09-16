@@ -1,0 +1,47 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import BlogCard from "../../components/BlogCard.astro";
+import PageHero from "../../components/PageHero.astro";
+import Reveal from "../../components/Reveal.astro";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+
+<BaseLayout
+  title="Blog"
+  description="Articles from TwinBuilt Studio on urban building energy modeling, AI in energy analytics, and building decarbonization."
+>
+  <PageHero
+    title="Insights"
+    description="Short articles on urban energy, retrofit strategy, and data-informed climate decisions."
+    image="/images/analytics.svg"
+    imageAlt="Abstract analytics graphic for the blog index"
+  />
+
+  <section class="section-pad bg-white-soft">
+    <div class="mx-auto grid max-w-6xl gap-8 px-6 md:grid-cols-2 md:px-10 lg:grid-cols-3">
+      {posts.map((post) => (
+        <Reveal>
+          <BlogCard
+            title={post.data.title}
+            description={post.data.description}
+            href={`/blog/${post.id}/`}
+            image={post.data.heroImage}
+            imageAlt={post.data.heroAlt}
+            date={post.data.pubDate.toLocaleDateString("en-CA", {
+              year: "numeric",
+              month: "short",
+              day: "numeric",
+              timeZone: "UTC",
+            })}
+            minutes={post.data.minutes}
+            author={post.data.author}
+          />
+        </Reveal>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

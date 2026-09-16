@@ -1,0 +1,17 @@
+---
+interface Props {
+  quote: string;
+  attribution: string;
+  note?: string;
+}
+
+const { quote, attribution, note } = Astro.props;
+---
+
+<blockquote class="rounded-[0.75rem] border border-charcoal/15 p-8">
+  <p class="editorial text-[1.35rem] leading-snug text-ink">{quote}</p>
+  <footer class="mt-6 text-[0.78rem] uppercase tracking-[0.14em] text-charcoal/70">
+    {attribution}
+    {note && <span class="mt-2 block normal-case tracking-normal">{note}</span>}
+  </footer>
+</blockquote>
