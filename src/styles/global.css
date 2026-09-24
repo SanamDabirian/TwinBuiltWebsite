@@ -1,15 +1,16 @@
 @import "tailwindcss";
 
 @theme {
-  --color-charcoal: #2d3433;
-  --color-deep: #1a1e1d;
-  --color-sage: #b2c2b9;
-  --color-mint: #dcebe6;
-  --color-ink: #1d2422;
-  --color-white-soft: #f4f7f5;
+  --color-charcoal: #24312b;
+  --color-deep: #121916;
+  --color-sage: #ddd4c4;
+  --color-mint: #f3eee6;
+  --color-ink: #1c1915;
+  --color-white-soft: #f7f4ee;
+  --color-brass: #b08a5b;
 
-  --font-display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
-  --font-ui: Inter, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-display: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-ui: "Source Sans 3", "Segoe UI", Helvetica, Arial, sans-serif;
 
   --radius-pill: 999px;
   --radius-card: 0.75rem;
@@ -28,15 +29,110 @@ body {
 
 h1,
 h2,
-h3,
-.editorial {
+h3 {
   font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.editorial {
+  font-family: var(--font-ui);
   font-weight: 400;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
+  line-height: 1.55;
+}
+
+@keyframes svg-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes svg-glow {
+  0%,
+  100% {
+    opacity: 0.18;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes svg-node {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.25);
+  }
+}
+
+@keyframes svg-flow {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes svg-drift {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .svg-spin,
+  .svg-spin-slow,
+  .svg-rotor {
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+
+  .svg-spin {
+    animation: svg-spin 16s linear infinite;
+  }
+
+  .svg-spin-slow {
+    animation: svg-spin 28s linear infinite;
+  }
+
+  .svg-windows rect:nth-child(odd) {
+    animation: svg-glow 4.5s ease-in-out infinite;
+  }
+
+  .svg-windows rect:nth-child(even) {
+    animation: svg-glow 6s ease-in-out infinite 0.8s;
+  }
+
+  .svg-node {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: svg-node 3.2s ease-in-out infinite;
+  }
+
+  .svg-node-delay {
+    animation-delay: 1.2s;
+  }
+
+  .svg-flow {
+    stroke-dasharray: 8 10;
+    stroke-dashoffset: 80;
+    animation: svg-flow 8s linear infinite;
+  }
+
+  .svg-drift {
+    animation: svg-drift 12s ease-in-out infinite;
+  }
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-sage);
+  outline: 2px solid var(--color-brass);
   outline-offset: 3px;
 }
 
@@ -45,14 +141,19 @@ h3,
 }
 
 .reveal {
-  opacity: 0;
-  transform: translateY(1.25rem);
+  opacity: 1;
+  transform: none;
   transition:
     opacity 0.8s ease,
     transform 0.8s ease;
 }
 
-.reveal.is-visible {
+html.js-reveal .reveal:not(.is-visible) {
+  opacity: 0;
+  transform: translateY(1.25rem);
+}
+
+html.js-reveal .reveal.is-visible {
   opacity: 1;
   transform: none;
 }

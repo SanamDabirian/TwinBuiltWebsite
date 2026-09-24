@@ -4,9 +4,13 @@ export const site = {
   email: "info@twinbuiltstudio.net",
   url: "https://twinbuiltstudio.net",
   tagline: "Building the Digital Future of Sustainable Cities",
+  shortTagline: "Sustainable Building Intelligence",
   description:
     "TwinBuilt Studio helps municipalities and organizations pursue net-zero goals through urban building energy modeling, digital twins, retrofit analysis, and data-driven decarbonization strategy.",
 } as const;
+
+/** Temporary visible build number. Increment by 1 after each completed round of changes. */
+export const siteVersion = 8;
 
 export const navLinks = [
   { href: "/", label: "Home" },
@@ -17,4 +21,4 @@ export const navLinks = [
   { href: "/contact/", label: "Contact" },
 ] as const;
 
-export const defaultOgImage = "/images/og-default.svg";
+export const defaultOgImage = "/images/og-default.png";

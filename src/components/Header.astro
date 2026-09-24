@@ -1,4 +1,5 @@
 ---
+import Logo from "./Logo.astro";
 import { navLinks, site } from "../data/site";
 import { isCurrentPath } from "../utils/paths";
 
@@ -9,9 +10,9 @@ const pathname = Astro.url.pathname;
   id="site-header"
   class="fixed inset-x-0 top-0 z-50 border-b border-transparent bg-charcoal/92 text-mint backdrop-blur-sm transition-colors duration-300"
 >
-  <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4 md:px-10">
-    <a href="/" class="font-ui text-[0.92rem] uppercase tracking-[0.18em] text-mint">
-      {site.name}
+  <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-3 md:px-10">
+    <a href="/" class="flex min-w-0 shrink items-center" aria-label={`${site.name} home`}>
+      <Logo variant="header" />
     </a>
     <nav class="hidden items-center gap-7 lg:flex" aria-label="Primary">
       {navLinks.map((link) => (

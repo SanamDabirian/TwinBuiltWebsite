@@ -23,25 +23,29 @@ const posts = (await getCollection("blog")).sort(
 
   <section class="section-pad bg-white-soft">
     <div class="mx-auto grid max-w-6xl gap-8 px-6 md:grid-cols-2 md:px-10 lg:grid-cols-3">
-      {posts.map((post) => (
-        <Reveal>
-          <BlogCard
-            title={post.data.title}
-            description={post.data.description}
-            href={`/blog/${post.id}/`}
-            image={post.data.heroImage}
-            imageAlt={post.data.heroAlt}
-            date={post.data.pubDate.toLocaleDateString("en-CA", {
-              year: "numeric",
-              month: "short",
-              day: "numeric",
-              timeZone: "UTC",
-            })}
-            minutes={post.data.minutes}
-            author={post.data.author}
-          />
-        </Reveal>
-      ))}
+      {posts.length === 0 ? (
+        <p class="text-ink/70">No articles are published yet.</p>
+      ) : (
+        posts.map((post) => (
+          <Reveal>
+            <BlogCard
+              title={post.data.title}
+              description={post.data.description}
+              href={`/blog/${post.id}/`}
+              image={post.data.heroImage}
+              imageAlt={post.data.heroAlt}
+              date={post.data.pubDate.toLocaleDateString("en-CA", {
+                year: "numeric",
+                month: "short",
+                day: "numeric",
+                timeZone: "UTC",
+              })}
+              minutes={post.data.minutes}
+              author={post.data.author}
+            />
+          </Reveal>
+        ))
+      )}
     </div>
   </section>
 </BaseLayout>

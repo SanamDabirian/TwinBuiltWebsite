@@ -1,0 +1,35 @@
+---
+import logoMark from "../icon1.png";
+import logoLockup from "../icon3.png";
+import { site } from "../data/site";
+
+interface Props {
+  variant?: "header" | "footer" | "mark";
+}
+
+const { variant = "header" } = Astro.props;
+---
+
+{
+  variant === "mark" ? (
+    <img
+      src={logoMark.src}
+      alt=""
+      width={logoMark.width}
+      height={logoMark.height}
+      class="h-8 w-8 object-contain object-center mix-blend-screen sm:h-9 sm:w-9"
+    />
+  ) : (
+    <img
+      src={logoLockup.src}
+      alt={`${site.name}, Sustainable Building Intelligence`}
+      width={logoLockup.width}
+      height={logoLockup.height}
+      class:list={[
+        "w-auto object-contain object-left",
+        variant === "header" && "h-9 max-w-[min(100%,220px)] sm:h-10 sm:max-w-[260px]",
+        variant === "footer" && "h-12 max-w-[280px]",
+      ]}
+    />
+  )
+}

@@ -1,4 +1,6 @@
 ---
+import GridPattern from "./graphics/GridPattern.astro";
+
 interface Props {
   title: string;
   description?: string;
@@ -14,20 +16,21 @@ const {
 } = Astro.props;
 ---
 
-<header class="relative isolate min-h-[58vh] overflow-hidden bg-deep">
+<header class="relative isolate min-h-[58vh] overflow-hidden bg-deep text-mint">
   <img
     src={image}
     alt={imageAlt}
     class="hero-scale absolute inset-0 h-full w-full object-cover"
     data-reveal
   />
+  <GridPattern />
   <div class="absolute inset-0 bg-gradient-to-r from-deep/92 via-deep/78 to-deep/50"></div>
   <div class="relative mx-auto flex min-h-[58vh] max-w-6xl flex-col justify-end px-6 py-20 md:px-10">
-    <h1 class="max-w-4xl text-[clamp(2.6rem,7vw,5.4rem)] font-normal leading-[0.95] text-mint">
+    <h1 class="max-w-4xl text-[clamp(2.4rem,6.5vw,4.8rem)] font-semibold leading-[1.05] text-mint">
       {title}
     </h1>
     {description && (
-      <p class="editorial mt-6 max-w-2xl text-[clamp(1.2rem,2.4vw,1.75rem)] text-mint/85">
+      <p class="editorial mt-6 max-w-2xl text-[clamp(1.1rem,2vw,1.45rem)] text-mint/90">
         {description}
       </p>
     )}

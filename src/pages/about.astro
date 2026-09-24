@@ -2,6 +2,8 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHero from "../components/PageHero.astro";
 import Reveal from "../components/Reveal.astro";
+import CityNetwork from "../components/graphics/CityNetwork.astro";
+import IconMark from "../components/graphics/IconMark.astro";
 import { site } from "../data/site";
 
 const clients = [
@@ -25,14 +27,19 @@ const clients = [
   />
 
   <section class="section-pad bg-white-soft">
-    <div class="mx-auto max-w-4xl px-6 md:px-10">
+    <div class="mx-auto grid max-w-6xl items-center gap-12 px-6 md:grid-cols-2 md:px-10">
       <Reveal>
-        <p class="editorial text-[clamp(1.25rem,2.4vw,1.8rem)] leading-snug text-ink/90">
+        <p class="editorial text-[clamp(1.15rem,2vw,1.45rem)] leading-relaxed text-ink/90">
           TwinBuilt Studio helps municipalities, building owners, campuses, and organizations pursue net-zero goals and foster more sustainable urban environments through data-driven approaches.
         </p>
-        <p class="editorial mt-8 text-[clamp(1.2rem,2.2vw,1.65rem)] leading-snug text-ink/85">
+        <p class="editorial mt-8 text-[clamp(1.1rem,1.9vw,1.35rem)] leading-relaxed text-ink/85">
           Our core mission is to empower clients with the tools and strategies necessary to make informed decisions for a sustainable future.
         </p>
+      </Reveal>
+      <Reveal>
+        <div class="overflow-hidden rounded-[0.75rem] border border-charcoal/10">
+          <CityNetwork class="h-[280px] w-full md:h-[340px]" />
+        </div>
       </Reveal>
     </div>
   </section>
@@ -43,7 +50,10 @@ const clients = [
         <h2 class="text-[clamp(2rem,4vw,3.4rem)]">Who we serve</h2>
         <ul class="mt-10 grid gap-4 md:grid-cols-2">
           {clients.map((item) => (
-            <li class="border-b border-mint/20 py-4 editorial text-[1.4rem]">{item}</li>
+            <li class="flex items-center gap-4 border-b border-mint/20 py-4">
+              <IconMark name="twin" />
+              <span class="editorial text-[1.2rem]">{item}</span>
+            </li>
           ))}
         </ul>
       </Reveal>

@@ -1,0 +1,16 @@
+---
+import WindTurbine from "./WindTurbine.astro";
+
+interface Props {
+  class?: string;
+}
+const { class: className = "h-full w-full" } = Astro.props;
+---
+
+<svg class={className} viewBox="0 0 420 280" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <rect width="420" height="280" fill="#121916"/>
+  <rect y="200" width="420" height="80" fill="#1c2621"/>
+  <WindTurbine x={90} y={108} mast={92} scale={0.85} />
+  <WindTurbine x={210} y={78} mast={122} slow />
+  <WindTurbine x={330} y={118} mast={82} scale={0.8} />
+</svg>
