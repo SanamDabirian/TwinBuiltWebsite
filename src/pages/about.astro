@@ -3,15 +3,34 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHero from "../components/PageHero.astro";
 import Reveal from "../components/Reveal.astro";
 import CityNetwork from "../components/graphics/CityNetwork.astro";
-import IconMark from "../components/graphics/IconMark.astro";
 import { site } from "../data/site";
 
 const clients = [
-  "Municipalities",
-  "Building owners",
-  "Campuses and universities",
-  "Public organizations",
-  "Private organizations pursuing net-zero goals",
+  {
+    label: "Municipalities",
+    iconSrc: "/images/municipality.svg",
+    iconAlt: "Municipality icon",
+  },
+  {
+    label: "Building owners",
+    iconSrc: "/images/hotel.svg",
+    iconAlt: "Building owner icon",
+  },
+  {
+    label: "Campuses and universities",
+    iconSrc: "/images/university.svg",
+    iconAlt: "University campus icon",
+  },
+  {
+    label: "Public organizations",
+    iconSrc: "/images/public.svg",
+    iconAlt: "Public organization icon",
+  },
+  {
+    label: "Private organizations pursuing net-zero goals",
+    iconSrc: "/images/owners.svg",
+    iconAlt: "Private organization icon",
+  },
 ];
 ---
 
@@ -51,8 +70,16 @@ const clients = [
         <ul class="mt-10 grid gap-4 md:grid-cols-2">
           {clients.map((item) => (
             <li class="flex items-center gap-4 border-b border-mint/20 py-4">
-              <IconMark name="twin" />
-              <span class="editorial text-[1.2rem]">{item}</span>
+              <div class="flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-full bg-white">
+                <img
+                  src={item.iconSrc}
+                  alt={item.iconAlt}
+                  class="h-[72%] w-[72%] object-contain"
+                  width="64"
+                  height="64"
+                />
+              </div>
+              <span class="editorial text-[1.2rem]">{item.label}</span>
             </li>
           ))}
         </ul>

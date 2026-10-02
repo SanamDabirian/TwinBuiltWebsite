@@ -10,7 +10,7 @@ export const site = {
 } as const;
 
 /** Temporary visible build number. Increment by 1 after each completed round of changes. */
-export const siteVersion = 8;
+export const siteVersion = 26;
 
 export const navLinks = [
   { href: "/", label: "Home" },

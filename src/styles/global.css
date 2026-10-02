@@ -86,6 +86,50 @@ h3 {
   }
 }
 
+@keyframes svg-bubble {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: translateY(4px) scale(0.96);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes svg-gesture {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-8deg);
+  }
+}
+
+@keyframes svg-gesture-alt {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(8deg);
+  }
+}
+
+@keyframes svg-signal {
+  0%,
+  100% {
+    opacity: 0.15;
+    stroke-dashoffset: 24;
+  }
+  50% {
+    opacity: 0.75;
+    stroke-dashoffset: 0;
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .svg-spin,
   .svg-spin-slow,
@@ -128,6 +172,42 @@ h3 {
 
   .svg-drift {
     animation: svg-drift 12s ease-in-out infinite;
+  }
+
+  .svg-bubble,
+  .svg-bubble-delay,
+  .svg-gesture,
+  .svg-gesture-alt {
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+
+  .svg-bubble {
+    animation: svg-bubble 3.4s ease-in-out infinite;
+  }
+
+  .svg-bubble-delay {
+    animation: svg-bubble 3.4s ease-in-out infinite 1.1s;
+  }
+
+  .svg-gesture {
+    transform-origin: left center;
+    animation: svg-gesture 3.8s ease-in-out infinite;
+  }
+
+  .svg-gesture-alt {
+    transform-origin: right center;
+    animation: svg-gesture-alt 3.8s ease-in-out infinite 0.6s;
+  }
+
+  .svg-signal,
+  .svg-signal-delay {
+    stroke-dasharray: 6 8;
+    animation: svg-signal 2.8s ease-in-out infinite;
+  }
+
+  .svg-signal-delay {
+    animation-delay: 0.9s;
   }
 }
 

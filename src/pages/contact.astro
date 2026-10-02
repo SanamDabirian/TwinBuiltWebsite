@@ -3,9 +3,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Button from "../components/Button.astro";
 import PageHero from "../components/PageHero.astro";
 import Reveal from "../components/Reveal.astro";
-import { formUrls, mailto } from "../data/forms";
+import { mailto } from "../data/forms";
 import { site } from "../data/site";
-import WindField from "../components/graphics/WindField.astro";
 ---
 
 <BaseLayout
@@ -20,7 +19,7 @@ import WindField from "../components/graphics/WindField.astro";
   />
 
   <section class="section-pad bg-white-soft">
-    <div class="mx-auto grid max-w-6xl gap-14 px-6 md:grid-cols-2 md:px-10">
+    <div class="mx-auto grid max-w-6xl items-center gap-14 px-6 md:grid-cols-2 md:px-10">
       <Reveal>
         <h2 class="text-[clamp(2rem,4vw,3.2rem)] text-charcoal">{site.principal}</h2>
         <p class="editorial mt-6 text-[1.2rem] leading-relaxed text-ink/85">
@@ -37,26 +36,14 @@ import WindField from "../components/graphics/WindField.astro";
         </div>
       </Reveal>
       <Reveal>
-        <div class="overflow-hidden rounded-[0.75rem] border border-charcoal/10">
-          <WindField class="h-[220px] w-full" />
-        </div>
-        <div class="mt-6 rounded-[0.75rem] border border-charcoal/15 p-8">
-          <h2 class="text-[clamp(1.6rem,3vw,2.2rem)] text-charcoal">Consultation request form</h2>
-          <p class="editorial mt-4 text-[1.2rem] text-ink/80">
-            Requests are collected through Google Forms. The native page does not send email by itself.
-          </p>
-          <p class="mt-4 text-[0.85rem] uppercase tracking-[0.12em] text-charcoal/60">
-            CONTENT TO CONFIRM: Google Form URL
-          </p>
-          <div class="mt-8">
-            <Button href={formUrls.contact} tone="light" newTab>
-              Open contact form
-            </Button>
-          </div>
-          <p class="mt-6 text-[1rem] text-ink/75">
-            Prefer email? Contact
-            <a class="underline-offset-4 hover:underline" href={mailto}>{site.email}</a>
-          </p>
+        <div class="overflow-hidden rounded-[0.75rem] border border-charcoal/10 bg-white-soft">
+          <img
+            src="/images/contact-us.svg"
+            alt="Animated illustration of a consultation call and conversation"
+            class="h-[280px] w-full object-contain p-4 md:h-[340px]"
+            width="512"
+            height="512"
+          />
         </div>
       </Reveal>
     </div>

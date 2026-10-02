@@ -1,19 +1,16 @@
 /**
- * External form URLs. Replace placeholders when Google Forms are ready.
- * CONTENT TO CONFIRM
+ * External Google Form URLs for Book Online consultations.
  */
 export const formUrls = {
-  contact:
-    "https://docs.google.com/forms/d/e/CONTENT-TO-CONFIRM/viewform",
   consultation:
-    "https://docs.google.com/forms/d/e/CONTENT-TO-CONFIRM/viewform",
+    "https://docs.google.com/forms/d/e/1FAIpQLScLtXzNgg7WRqblqiysIWjU64-tkP3hm9xZABNe8w-bq42QoA/viewform",
   consultations: {
     "decarbonization-strategy-session":
-      "https://docs.google.com/forms/d/e/CONTENT-TO-CONFIRM/viewform?usp=pp_url&entry.service=Decarbonization+Strategy+Session",
+      "https://docs.google.com/forms/d/e/1FAIpQLScLtXzNgg7WRqblqiysIWjU64-tkP3hm9xZABNe8w-bq42QoA/viewform",
     "energy-modeling-consultation":
-      "https://docs.google.com/forms/d/e/CONTENT-TO-CONFIRM/viewform?usp=pp_url&entry.service=Energy+Modeling+Consultation",
+      "https://docs.google.com/forms/d/e/1FAIpQLSeFUx3WwAO1S5kqibUFGqzjMCh26u3B2JBJxsk9P8kSIm6tSw/viewform",
     "retrofit-strategy-workshop":
-      "https://docs.google.com/forms/d/e/CONTENT-TO-CONFIRM/viewform?usp=pp_url&entry.service=Retrofit+Strategy+Workshop",
+      "https://docs.google.com/forms/d/e/1FAIpQLSeYimMyBatEXB40OlyD_rG9ELHClcrz3mKV91nhspoXZJStHA/viewform",
   },
 } as const;
 
