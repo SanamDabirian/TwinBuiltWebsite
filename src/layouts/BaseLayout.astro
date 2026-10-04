@@ -1,7 +1,6 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import VersionBadge from "../components/VersionBadge.astro";
 import { defaultOgImage, site } from "../data/site";
 import "../styles/global.css";
 
@@ -52,7 +51,6 @@ const fullTitle = title === site.name ? title : `${title} · ${site.name}`;
       <slot />
     </main>
     <Footer />
-    <VersionBadge />
     <script>
       const header = document.getElementById("site-header");
       const toggle = document.querySelector("[data-menu-toggle]");

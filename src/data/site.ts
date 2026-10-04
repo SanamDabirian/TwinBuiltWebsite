@@ -9,9 +9,6 @@ export const site = {
     "TwinBuilt Studio helps municipalities and organizations pursue net-zero goals through urban building energy modeling, digital twins, retrofit analysis, and data-driven decarbonization strategy.",
 } as const;
 
-/** Temporary visible build number. Increment by 1 after each completed round of changes. */
-export const siteVersion = 26;
-
 export const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about/", label: "About" },
