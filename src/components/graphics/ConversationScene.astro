@@ -1,0 +1,64 @@
+---
+interface Props {
+  class?: string;
+}
+const { class: className = "h-full w-full" } = Astro.props;
+---
+
+<svg class={className} viewBox="0 0 420 280" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <rect width="420" height="280" fill="#121916" />
+  <rect y="210" width="420" height="70" fill="#1c2621" />
+
+  <!-- Subtle desk -->
+  <rect x="70" y="188" width="280" height="10" rx="2" fill="#24312b" />
+  <rect x="90" y="198" width="10" height="40" fill="#24312b" />
+  <rect x="320" y="198" width="10" height="40" fill="#24312b" />
+
+  <!-- Left person -->
+  <g transform="translate(130 95)">
+    <circle cx="0" cy="0" r="18" fill="#ddd4c4" />
+    <path d="M -28 78 C -28 42 -18 28 0 28 C 18 28 28 42 28 78 Z" fill="#b08a5b" />
+    <g class="svg-gesture">
+      <path d="M 22 48 C 38 42 52 50 58 58" fill="none" stroke="#ddd4c4" stroke-width="5" stroke-linecap="round" />
+    </g>
+  </g>
+
+  <!-- Right person -->
+  <g transform="translate(290 95)">
+    <circle cx="0" cy="0" r="18" fill="#f3eee6" />
+    <path d="M -28 78 C -28 42 -18 28 0 28 C 18 28 28 42 28 78 Z" fill="#24312b" stroke="#ddd4c4" stroke-width="1.5" />
+    <g class="svg-gesture-alt">
+      <path d="M -22 50 C -36 44 -50 52 -56 60" fill="none" stroke="#ddd4c4" stroke-width="5" stroke-linecap="round" />
+    </g>
+  </g>
+
+  <!-- Conversation bubbles -->
+  <g class="svg-bubble">
+    <rect x="155" y="42" width="54" height="28" rx="10" fill="#f3eee6" />
+    <path d="M 168 70 L 174 78 L 180 70 Z" fill="#f3eee6" />
+    <circle cx="170" cy="56" r="2.5" fill="#121916" />
+    <circle cx="182" cy="56" r="2.5" fill="#121916" />
+    <circle cx="194" cy="56" r="2.5" fill="#121916" />
+  </g>
+
+  <g class="svg-bubble-delay">
+    <rect x="230" y="28" width="48" height="24" rx="10" fill="#b08a5b" />
+    <path d="M 255 52 L 262 60 L 268 52 Z" fill="#b08a5b" />
+    <circle cx="244" cy="40" r="2.2" fill="#f3eee6" />
+    <circle cx="254" cy="40" r="2.2" fill="#f3eee6" />
+    <circle cx="264" cy="40" r="2.2" fill="#f3eee6" />
+  </g>
+
+  <!-- Connecting signal arcs -->
+  <g fill="none" stroke="#ddd4c4" stroke-width="1.4" opacity="0.55">
+    <path class="svg-signal" d="M 188 95 C 200 82 220 82 232 95" />
+    <path class="svg-signal-delay" d="M 180 88 C 200 70 220 70 240 88" />
+  </g>
+
+  <!-- Small phone / call cue -->
+  <g transform="translate(205 150)">
+    <rect x="-10" y="-16" width="20" height="32" rx="4" fill="#ddd4c4" />
+    <rect x="-6" y="-10" width="12" height="18" rx="1.5" fill="#121916" />
+    <circle class="svg-node" cx="0" cy="10" r="2" fill="#121916" />
+  </g>
+</svg>

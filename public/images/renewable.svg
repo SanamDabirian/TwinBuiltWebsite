@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Renewable energy turbines against a dark landscape">
+  <rect width="1200" height="800" fill="#1D2422"/>
+  <rect y="560" width="1200" height="240" fill="#2D3433"/>
+  <g fill="#DCEBE6" opacity="0.55">
+    <rect x="280" y="280" width="8" height="280"/>
+    <polygon points="284,280 220,360 284,320 348,360"/>
+    <rect x="620" y="180" width="10" height="380"/>
+    <polygon points="625,180 540,280 625,230 710,280"/>
+    <rect x="920" y="250" width="8" height="310"/>
+    <polygon points="924,250 860,330 924,290 988,330"/>
+  </g>
+</svg>

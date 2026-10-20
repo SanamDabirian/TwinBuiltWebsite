@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Abstract urban district grid">
+  <rect width="1200" height="800" fill="#2D3433"/>
+  <g stroke="#DCEBE6" stroke-width="1.5" fill="none" opacity="0.35">
+    <path d="M80 640 L360 420 L640 560 L980 220"/>
+    <circle cx="360" cy="420" r="8"/>
+    <circle cx="640" cy="560" r="8"/>
+    <circle cx="980" cy="220" r="8"/>
+  </g>
+  <g fill="#B2C2B9" opacity="0.2">
+    <rect x="140" y="280" width="70" height="260"/>
+    <rect x="230" y="200" width="90" height="340"/>
+    <rect x="340" y="320" width="60" height="220"/>
+    <rect x="720" y="180" width="80" height="360"/>
+    <rect x="820" y="260" width="110" height="280"/>
+  </g>
+</svg>

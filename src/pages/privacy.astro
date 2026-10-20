@@ -1,0 +1,39 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import { site } from "../data/site";
+---
+
+<BaseLayout
+  title="Privacy Policy"
+  description="How TwinBuilt Studio collects and uses information from contact and consultation requests. This page is marked for legal review before launch."
+>
+  <PageHero title="Privacy Policy" description="This wording is a working draft for client and legal review before launch." />
+
+  <article class="section-pad bg-white-soft">
+    <div class="prose-like mx-auto max-w-3xl px-6 text-[1.15rem] leading-relaxed text-ink/90 md:px-10">
+      <p class="text-[0.8rem] uppercase tracking-[0.14em] text-charcoal/60">CONTENT TO CONFIRM · legal review required</p>
+      <h2 class="mt-10 text-[2rem] text-charcoal">Information we collect</h2>
+      <p class="mt-4">
+        Contact and consultation forms may collect your name, email address, organization, selected service, project or building context, preferred meeting format, preferred time ranges, and any additional questions you choose to share.
+      </p>
+      <h2 class="mt-10 text-[2rem] text-charcoal">How responses are processed</h2>
+      <p class="mt-4">
+        Form responses are processed through Google Forms and stored in Google Sheets associated with TwinBuilt Studio. Email sent to {site.email} is handled through ordinary email.
+      </p>
+      <h2 class="mt-10 text-[2rem] text-charcoal">Why we collect it</h2>
+      <p class="mt-4">
+        We use this information to respond to inquiries, assess whether a consultation is a fit, and confirm meeting details. We do not sell this information.
+      </p>
+      <h2 class="mt-10 text-[2rem] text-charcoal">Correction or deletion</h2>
+      <p class="mt-4">
+        You may request correction or deletion of information you have submitted by emailing
+        <a class="underline-offset-4 hover:underline" href={`mailto:${site.email}`}>{site.email}</a>.
+      </p>
+      <h2 class="mt-10 text-[2rem] text-charcoal">Contact</h2>
+      <p class="mt-4">
+        TwinBuilt Studio, {site.principal}, {site.email}.
+      </p>
+    </div>
+  </article>
+</BaseLayout>

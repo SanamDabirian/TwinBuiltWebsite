@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Interior light and shadow across architectural blinds">
+  <rect width="1200" height="800" fill="#2D3433"/>
+  <g fill="#1A1E1D">
+    <rect x="0" y="40" width="1200" height="28"/>
+    <rect x="0" y="110" width="1200" height="28"/>
+    <rect x="0" y="180" width="1200" height="28"/>
+    <rect x="0" y="250" width="1200" height="28"/>
+    <rect x="0" y="320" width="1200" height="28"/>
+    <rect x="0" y="390" width="1200" height="28"/>
+    <rect x="0" y="460" width="1200" height="28"/>
+    <rect x="0" y="530" width="1200" height="28"/>
+    <rect x="0" y="600" width="1200" height="28"/>
+    <rect x="0" y="670" width="1200" height="28"/>
+    <rect x="0" y="740" width="1200" height="28"/>
+  </g>
+  <rect width="1200" height="800" fill="#DCEBE6" opacity="0.06"/>
+</svg>

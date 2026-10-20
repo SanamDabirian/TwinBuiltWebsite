@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://twinbuiltstudio.net/sitemap-index.xml

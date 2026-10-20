@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Moody architectural facade in charcoal and sage">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1A1E1D"/>
+      <stop offset="100%" stop-color="#2D3433"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#g)"/>
+  <g fill="#B2C2B9" opacity="0.18">
+    <rect x="80" y="120" width="220" height="680"/>
+    <rect x="340" y="80" width="180" height="720"/>
+    <rect x="560" y="200" width="260" height="600"/>
+    <rect x="860" y="60" width="200" height="760"/>
+    <rect x="1100" y="160" width="240" height="660"/>
+    <rect x="1380" y="240" width="160" height="580"/>
+  </g>
+  <g fill="#DCEBE6" opacity="0.08">
+    <rect x="110" y="180" width="24" height="40"/>
+    <rect x="150" y="180" width="24" height="40"/>
+    <rect x="190" y="180" width="24" height="40"/>
+    <rect x="110" y="250" width="24" height="40"/>
+    <rect x="150" y="250" width="24" height="40"/>
+    <rect x="190" y="250" width="24" height="40"/>
+    <rect x="390" y="140" width="28" height="48"/>
+    <rect x="430" y="140" width="28" height="48"/>
+    <rect x="390" y="210" width="28" height="48"/>
+    <rect x="430" y="210" width="28" height="48"/>
+    <rect x="610" y="260" width="32" height="52"/>
+    <rect x="660" y="260" width="32" height="52"/>
+    <rect x="710" y="260" width="32" height="52"/>
+  </g>
+  <rect width="1600" height="900" fill="#1A1E1D" opacity="0.25"/>
+</svg>

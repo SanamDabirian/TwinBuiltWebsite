@@ -1,0 +1,51 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Button from "../components/Button.astro";
+import PageHero from "../components/PageHero.astro";
+import Reveal from "../components/Reveal.astro";
+import { mailto } from "../data/forms";
+import { site } from "../data/site";
+---
+
+<BaseLayout
+  title="Contact"
+  description="Contact Dr. Sanam Dabirian at TwinBuilt Studio to discuss urban energy modeling, digital twins, and decarbonization strategy."
+>
+  <PageHero
+    title="Get in touch"
+    description="Reach TwinBuilt Studio to discuss your organization's sustainability journey."
+    image="/images/district-grid.svg"
+    imageAlt="Abstract district grid used as a contact page placeholder"
+  />
+
+  <section class="section-pad bg-white-soft">
+    <div class="mx-auto grid max-w-6xl items-center gap-14 px-6 md:grid-cols-2 md:px-10">
+      <Reveal>
+        <h2 class="text-[clamp(2rem,4vw,3.2rem)] text-charcoal">{site.principal}</h2>
+        <p class="editorial mt-6 text-[1.2rem] leading-relaxed text-ink/85">
+          We invite a conversation about municipalities, campuses, and building portfolios working toward net-zero goals.
+        </p>
+        <p class="mt-8">
+          <a class="text-[1.2rem] text-charcoal underline-offset-4 hover:underline" href={mailto}>
+            {site.email}
+          </a>
+        </p>
+        <div class="mt-10 flex flex-wrap gap-4">
+          <Button href="/book-online/" tone="light">Book online</Button>
+          <Button href={mailto} tone="light">Email TwinBuilt Studio</Button>
+        </div>
+      </Reveal>
+      <Reveal>
+        <div class="overflow-hidden rounded-[0.75rem] border border-charcoal/10 bg-white-soft">
+          <img
+            src="/images/contact-us.svg"
+            alt="Animated illustration of a consultation call and conversation"
+            class="h-[280px] w-full object-contain p-4 md:h-[340px]"
+            width="512"
+            height="512"
+          />
+        </div>
+      </Reveal>
+    </div>
+  </section>
+</BaseLayout>
